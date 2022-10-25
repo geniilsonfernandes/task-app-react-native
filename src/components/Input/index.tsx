@@ -6,7 +6,7 @@ import { useTheme } from "styled-components/native";
 import { Alert } from "react-native";
 
 type InputProps = {
-  onSubmit: (task: string) => string;
+  onSubmit: (task: string) => void;
 };
 
 export const Input = ({ onSubmit }: InputProps) => {
@@ -16,6 +16,7 @@ export const Input = ({ onSubmit }: InputProps) => {
   const handleSubmitValue = () => {
     if (value.trim().length > 0) {
       onSubmit && onSubmit(value);
+      setValue("");
     } else {
       Alert.alert("Nova Tarefa", "digite sua tarefa");
     }
@@ -27,6 +28,7 @@ export const Input = ({ onSubmit }: InputProps) => {
         placeholder="Adicione uma nova tarefa"
         placeholderTextColor={theme.COLORS.GRAY_300}
         onChangeText={setValue}
+        value={value}
         multiline={true}
       />
       <S.Button onPress={() => handleSubmitValue()}>
