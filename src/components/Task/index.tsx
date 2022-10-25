@@ -5,12 +5,27 @@ import { useTheme } from "styled-components/native";
 
 import * as S from "./styles";
 
-export const Task = () => {
+type TaskProps = {
+  onRemove: () => void;
+  onCheck: () => void;
+  task: string;
+};
+
+export const Task = ({ onCheck, onRemove, task }: TaskProps) => {
   const [checked, setChecked] = useState(false);
   const theme = useTheme();
+
+  const handleRemove = () => {
+    setChecked((s) => !s);
+    onRemove && onRemove();
+  };
+  const handleCheck = () => {
+    onCheck && onCheck();
+  };
+
   return (
     <S.Wrapper>
-      <S.Checked onPress={() => setChecked((s) => !s)}>
+      <S.Checked onPress={() => handleRemove()}>
         {checked ? (
           <MaterialIcons
             name="check-circle"
@@ -25,10 +40,8 @@ export const Task = () => {
           />
         )}
       </S.Checked>
-      <S.Text>
-        Integer urna interdum massa libero auctor neque turpis turpis semper.
-      </S.Text>
-      <S.Trash onPress={() => setChecked((s) => !s)}>
+      <S.Text checked={checked}>{task}</S.Text>
+      <S.Trash onPress={() => handleCheck()}>
         <Octicons name="trash" size={16} color={theme.COLORS.GRAY_100} />
       </S.Trash>
     </S.Wrapper>

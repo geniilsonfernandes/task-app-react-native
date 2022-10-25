@@ -18,12 +18,23 @@ export const Checked = styled(TouchableOpacity)`
 export const Trash = styled(TouchableOpacity)`
   padding: 0 16px;
 `;
-export const Text = styled.Text`
-  ${({ theme }) => css`
+
+type TextProps = {
+  checked: boolean;
+};
+
+const textModifier = () => css`
+  text-decoration: line-through;
+  opacity: 0.5;
+`;
+
+export const Text = styled.Text<TextProps>`
+  ${({ theme, checked }) => css`
     font-size: 14px;
     color: ${theme.COLORS.GRAY_100};
     font-weight: 400;
     flex: 1;
     line-height: 20px;
+    ${checked && textModifier()}
   `}
 `;
