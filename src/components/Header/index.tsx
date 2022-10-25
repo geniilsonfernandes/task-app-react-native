@@ -1,14 +1,18 @@
 import React from "react";
 import { Text } from "react-native";
 import logoImg from "../../assets/logo.png";
+import { Input } from "../Input";
 
-import { Container, Logo } from "./styles";
+import * as S from "./styles";
 
 export const Header = () => {
   return (
-    <Container>
+    <S.Wrapper>
       <Text>Header</Text>
-      <Logo source={logoImg} />
-    </Container>
+      <S.Logo source={logoImg} />
+      <S.InputWrapper>
+        <Input />
+      </S.InputWrapper>
+    </S.Wrapper>
   );
 };
