@@ -20,7 +20,8 @@ export const Counter = styled.Text`
     color: ${theme.COLORS.GRAY_100};
     background: ${theme.COLORS.GRAY_500};
     width: 25px;
-    height: 16px;
+    height: 18px;
+    align-items: center;
     border-radius: 8px;
     font-weight: 600;
     font-size: 12px;
