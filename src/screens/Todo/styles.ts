@@ -6,14 +6,20 @@ export const Wrapper = styled.View`
     flex: 1;
   `}
 `;
+
 export const TodoWrapper = styled.View`
-  padding: 0 24px;
+  padding: 0 16px;
+`;
+export const TodosWrapper = styled.View`
+  padding: 0 16px;
+  flex: 1;
 `;
 export const InputWrapper = styled.View`
   margin-top: -27px;
 `;
+
 export const HeadWrapper = styled.View`
-  padding: 24px 0;
+  padding: 16px 0;
   flex-direction: row;
   justify-content: space-between;
 `;
