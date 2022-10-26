@@ -7,12 +7,13 @@ import * as S from "./styles";
 
 type TaskProps = {
   onRemove: () => void;
-  onCheck: (checked: boolean) => void;
+  onCheck: (checked: boolean, id: string) => void;
   task: string;
+  id: string;
   check: boolean;
 };
 
-export const Task = ({ onCheck, onRemove, task, check }: TaskProps) => {
+export const Task = ({ onCheck, onRemove, task, check, id }: TaskProps) => {
   const [checked, setChecked] = useState(check);
   const theme = useTheme();
 
@@ -21,7 +22,7 @@ export const Task = ({ onCheck, onRemove, task, check }: TaskProps) => {
   };
   const handleCheck = () => {
     setChecked(!checked);
-    onCheck && onCheck(!checked);
+    onCheck && onCheck(!checked, id);
   };
 
   useEffect(() => {
@@ -45,9 +46,7 @@ export const Task = ({ onCheck, onRemove, task, check }: TaskProps) => {
           />
         )}
       </S.Checked>
-      <S.Text checked={checked}>
-        {task} {check.toString()}
-      </S.Text>
+      <S.Text checked={checked}>{task}</S.Text>
       <S.Trash onPress={() => handleRemove()}>
         <Octicons name="trash" size={16} color={theme.COLORS.GRAY_100} />
       </S.Trash>
