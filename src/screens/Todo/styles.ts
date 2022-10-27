@@ -8,10 +8,14 @@ export const Wrapper = styled.View`
 `;
 
 export const TodoWrapper = styled.View`
-  padding: 0 16px;
+  ${({ theme }) => css`
+    padding: 0 ${theme.SPACINGS.SMALL};
+  `}
 `;
 export const TodosWrapper = styled.View`
-  padding: 0 16px;
+  ${({ theme }) => css`
+    padding: 0 ${theme.SPACINGS.SMALL};
+  `}
   flex: 1;
 `;
 export const InputWrapper = styled.View`
@@ -19,7 +23,9 @@ export const InputWrapper = styled.View`
 `;
 
 export const HeadWrapper = styled.View`
-  padding: 16px 0;
+  ${({ theme }) => css`
+    padding: ${theme.SPACINGS.SMALL} 0;
+  `}
   flex-direction: row;
   justify-content: space-between;
 `;

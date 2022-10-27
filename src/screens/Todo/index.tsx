@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { FlatList, View } from "react-native";
+import { FlatList } from "react-native";
 import { Counter } from "../../components/Counter";
 import { Empty } from "../../components/Empty";
 import { Header } from "../../components/Header";
-import { Input } from "../../components/Input";
+import { TaskInput } from "../../components/TaskInput";
 import { Task } from "../../components/Task";
 
 import * as S from "./styles";
@@ -55,10 +55,9 @@ const Todo = () => {
   return (
     <S.Wrapper>
       <Header />
-
       <S.TodoWrapper>
         <S.InputWrapper>
-          <Input onSubmit={(task) => handleAddNewTask(task)} />
+          <TaskInput onSubmit={(task) => handleAddNewTask(task)} />
         </S.InputWrapper>
         <S.HeadWrapper>
           <Counter title="Criadas" color="blue" counter={createdTasks} />

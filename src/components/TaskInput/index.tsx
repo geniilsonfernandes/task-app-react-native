@@ -9,7 +9,7 @@ type InputProps = {
   onSubmit: (task: string) => void;
 };
 
-export const Input = ({ onSubmit }: InputProps) => {
+export const TaskInput = ({ onSubmit }: InputProps) => {
   const theme = useTheme();
   const [value, setValue] = useState("");
 
