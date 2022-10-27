@@ -1,7 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { getAllList } from "./getAllLists";
 
-import { TODO_LISTS } from "../storageConfig";
+import { TODOS, TODO_LISTS } from "../storageConfig";
 import { ListTypes } from "../storageTypes";
 
 export async function createNewList(list: ListTypes) {
@@ -19,6 +19,19 @@ export async function createNewList(list: ListTypes) {
       TODO_LISTS,
       JSON.stringify([...storedList, list])
     );
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+export async function deleteList(list: string) {
+  try {
+    const storedList: ListTypes[] = await getAllList();
+
+    const storedFilterd = storedList.filter((item) => item.name !== list);
+    await AsyncStorage.setItem(TODO_LISTS, JSON.stringify(storedFilterd));
+    await AsyncStorage.removeItem(`${TODOS}:${list}`);
   } catch (error) {
     console.log(error);
     throw error;
