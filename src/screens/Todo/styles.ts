@@ -1,3 +1,4 @@
+import { TouchableOpacity } from "react-native";
 import styled, { css } from "styled-components/native";
 
 export const Wrapper = styled.View`
@@ -28,4 +29,19 @@ export const HeadWrapper = styled.View`
   `}
   flex-direction: row;
   justify-content: space-between;
+`;
+
+export const Trash = styled(TouchableOpacity)`
+  ${({ theme }) => css`
+    padding: 0 16px;
+    position: absolute;
+    bottom: ${theme.SPACINGS.SMALL};
+    right: ${theme.SPACINGS.SMALL};
+    background: ${theme.COLORS.DANGER};
+    width: 48px;
+    border-radius: 24px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+  `}
 `;
