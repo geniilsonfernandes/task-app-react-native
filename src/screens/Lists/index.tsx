@@ -19,6 +19,10 @@ export const Lists = () => {
     navigation.navigate("newlist");
   };
 
+  const handleNavigateToList = (id: string) => {
+    navigation.navigate("todo", { listName: id });
+  };
+
   async function fetchLists() {
     try {
       const data = await getAllList();
@@ -42,10 +46,16 @@ export const Lists = () => {
           <Counter title="Listas" color="blue" counter={lists?.length} />
         </S.Head>
         <FlatList
+          style={{ marginTop: 16, marginBottom: 16 }}
           showsVerticalScrollIndicator={false}
           data={lists}
           keyExtractor={({ id }) => `list ${id}`}
-          renderItem={({ item }) => <ListCard title={item.name} />}
+          renderItem={({ item }) => (
+            <ListCard
+              title={item.name}
+              onPress={() => handleNavigateToList(item.id)}
+            />
+          )}
           ListEmptyComponent={
             <Empty
               title="Você ainda criou nenhuma lista"

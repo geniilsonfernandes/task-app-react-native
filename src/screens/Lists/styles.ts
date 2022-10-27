@@ -28,5 +28,6 @@ export const Head = styled.View``;
 export const ContentButton = styled.View`
   ${({ theme }) => css`
     padding: 0 ${theme.SPACINGS.SMALL};
+    z-index: 100;
   `}
 `;
