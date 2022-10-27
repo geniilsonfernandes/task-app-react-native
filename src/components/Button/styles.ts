@@ -4,7 +4,7 @@ import styled, { css } from "styled-components/native";
 export const Wrapper = styled(TouchableOpacity)`
   ${({ theme }) => css`
     background: ${theme.COLORS.BLUE};
-    height: 64px;
+    height: 54px;
     padding: ${theme.SPACINGS.SMALL};
     border-radius: 6px;
     flex-direction: row;
