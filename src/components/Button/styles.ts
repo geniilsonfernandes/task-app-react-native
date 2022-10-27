@@ -5,7 +5,7 @@ export const Wrapper = styled(TouchableOpacity)`
   ${({ theme }) => css`
     background: ${theme.COLORS.BLUE};
     height: 54px;
-    padding: ${theme.SPACINGS.SMALL};
+    padding: 0 ${theme.SPACINGS.SMALL};
     border-radius: 6px;
     flex-direction: row;
     align-items: center;

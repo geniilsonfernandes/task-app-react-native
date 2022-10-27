@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { useTheme } from "styled-components";
 import { Button } from "../../components/Button";
@@ -8,9 +9,15 @@ import * as S from "./styles";
 
 export const NewList = () => {
   const theme = useTheme();
+  const navigation = useNavigation();
+
+  const handleAddNewList = () => {
+    navigation.navigate("todo");
+  };
+
   return (
     <S.Wrapper>
-      <Header />
+      <Header showBack />
       <S.Content>
         <S.Empty>
           <Empty
@@ -23,7 +30,7 @@ export const NewList = () => {
           placeholder="Nome da nova lista"
           placeholderTextColor={theme.COLORS.GRAY_300}
         />
-        <Button title="Criar" />
+        <Button title="Criar" onPress={handleAddNewList} />
       </S.Content>
     </S.Wrapper>
   );

@@ -54,7 +54,7 @@ const Todo = () => {
 
   return (
     <S.Wrapper>
-      <Header />
+      <Header showBack />
       <S.TodoWrapper>
         <S.InputWrapper>
           <TaskInput onSubmit={(task) => handleAddNewTask(task)} />

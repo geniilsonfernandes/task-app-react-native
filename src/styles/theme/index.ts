@@ -16,6 +16,6 @@ export default {
     BLUE_DARK: "#1E6F9F"
   },
   SPACINGS: {
-    SMALL: "16px"
+    SMALL: "24px"
   }
 };

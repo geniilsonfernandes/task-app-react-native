@@ -1,4 +1,5 @@
-import React from "react";
+import { useNavigation } from "@react-navigation/native";
+
 import { Button } from "../../components/Button";
 import { Counter } from "../../components/Counter";
 import { Empty } from "../../components/Empty";
@@ -8,7 +9,13 @@ import { ListCard } from "../../components/ListCard";
 import * as S from "./styles";
 
 export const Lists = () => {
+  const navigation = useNavigation();
+
   const list = Array.from(Array(0).keys());
+
+  const handleNewList = () => {
+    navigation.navigate("newlist");
+  };
 
   return (
     <S.Wrapper>
@@ -31,7 +38,7 @@ export const Lists = () => {
         />
       </S.Content>
       <S.ContentButton>
-        <Button title="Criar nova lista" />
+        <Button title="Criar nova lista" onPress={handleNewList} />
       </S.ContentButton>
     </S.Wrapper>
   );

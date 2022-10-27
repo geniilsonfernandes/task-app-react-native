@@ -1,3 +1,4 @@
+import { TouchableOpacity } from "react-native";
 import styled, { css } from "styled-components/native";
 
 export const Wrapper = styled.View`
@@ -7,6 +8,14 @@ export const Wrapper = styled.View`
     justify-content: center;
     align-items: center;
     position: relative;
+
+    padding: 0 ${theme.SPACINGS.SMALL};
+  `}
+`;
+export const ButtonBack = styled(TouchableOpacity)`
+  ${({ theme }) => css`
+    position: absolute;
+    left: ${theme.SPACINGS.SMALL};
   `}
 `;
 
