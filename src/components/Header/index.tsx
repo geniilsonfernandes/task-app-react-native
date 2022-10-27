@@ -8,9 +8,10 @@ import { useNavigation } from "@react-navigation/native";
 
 type HeaderProps = {
   showBack?: boolean;
+  title?: string;
 };
 
-export const Header = ({ showBack = false }: HeaderProps) => {
+export const Header = ({ showBack = false, title }: HeaderProps) => {
   const theme = useTheme();
 
   const navigation = useNavigation();
@@ -30,8 +31,7 @@ export const Header = ({ showBack = false }: HeaderProps) => {
           />
         </S.ButtonBack>
       )}
-
-      <S.Logo source={logoImg} />
+      {title ? <S.Title>{title}</S.Title> : <S.Logo source={logoImg} />}
     </S.Wrapper>
   );
 };

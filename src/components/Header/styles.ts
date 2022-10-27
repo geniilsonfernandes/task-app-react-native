@@ -12,6 +12,12 @@ export const Wrapper = styled.View`
     padding: 0 ${theme.SPACINGS.SMALL};
   `}
 `;
+export const Title = styled.Text`
+  ${({ theme }) => css`
+    font-size: 18px;
+    color: ${theme.COLORS.GRAY_300};
+  `}
+`;
 export const ButtonBack = styled(TouchableOpacity)`
   ${({ theme }) => css`
     position: absolute;
