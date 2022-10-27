@@ -7,6 +7,7 @@ import { TaskInput } from "../../components/TaskInput";
 import { Task } from "../../components/Task";
 
 import * as S from "./styles";
+import { useRoute } from "@react-navigation/native";
 
 type DataProps = {
   task: string;
@@ -15,7 +16,13 @@ type DataProps = {
   id: string;
 }[];
 
+type RouteParams = {
+  listName: string;
+};
+
 const Todo = () => {
+  const route = useRoute();
+  const { listName } = route.params as RouteParams;
   const [data, setData] = useState<DataProps>([]);
   const checkedTasks = data.filter((task) => task.check).length;
   const createdTasks = data.length;
@@ -54,7 +61,7 @@ const Todo = () => {
 
   return (
     <S.Wrapper>
-      <Header showBack />
+      <Header showBack title={listName} />
       <S.TodoWrapper>
         <S.InputWrapper>
           <TaskInput onSubmit={(task) => handleAddNewTask(task)} />
