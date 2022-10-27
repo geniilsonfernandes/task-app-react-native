@@ -9,15 +9,12 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import { Octicons } from "@expo/vector-icons";
 import { Alert } from "react-native";
 import { useTheme } from "styled-components/native";
+import { deleteList } from "../../store/list/createNewList";
+import { getAllTasks } from "../../store/todos/getAllTasks";
+import { updateTasks } from "../../store/todos/updateTask";
+import { addNewTodoInList } from "../../store/todos/addNewTodoInList";
 
 import * as S from "./styles";
-
-import {
-  addNewTodoInList,
-  getAllTasks,
-  updateTasks
-} from "../../store/todos/addNewTodoInList";
-import { deleteList } from "../../store/list/createNewList";
 
 export type TaskProps = {
   task: string;
