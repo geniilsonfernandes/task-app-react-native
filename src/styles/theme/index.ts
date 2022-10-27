@@ -14,5 +14,8 @@ export default {
     PURPLE_DARK: "#5E60CE",
     BLUE: "#4EA8DE",
     BLUE_DARK: "#1E6F9F"
+  },
+  SPACINGS: {
+    SMALL: "16px"
   }
 };
