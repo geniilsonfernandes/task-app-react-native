@@ -6,11 +6,7 @@ Projeto realizado para o curso de react native da [Rocketseat](https://www.rocke
 
 ## UI
 
-![TASK-REACT-NATIVE](ui_01.png)
-
-# deliverize
-
-![Preview-Screens](ui_01.png)
+![TASK-REACT-NATIVE](ui_02.png)
 
 ## Sobre o Projeto
 
